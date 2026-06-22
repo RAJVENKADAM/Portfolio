@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://rajvenkadam.github.io/#person",
+      "name": "Rajvenkadam S",
+      "jobTitle": "Product Engineer Aspirant & Technology Mentor",
+      "url": "https://rajvenkadam.github.io/",
+      "sameAs": [
+        "https://www.linkedin.com/in/rajvenkadam/",
+        "https://github.com/rajvenkadam"
+      ],
+      "worksFor": {
+        "@id": "https://rajvenkadam.github.io/#organization"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Knowledge Institute of Technology",
+        "url": "https://www.kiot.ac.in/"
+      },
+      "knowsAbout": [
+        "Product Engineering",
+        "Full-Stack Development",
+        "Software Engineering",
+        "Product Thinking",
+        "IoT",
+        "Algorithms"
+      ],
+      "description": "Information Technology student, Product Engineer aspirant, and Founder of AMUX."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://rajvenkadam.github.io/#organization",
+      "name": "AMUX",
+      "url": "https://rajvenkadam.github.io/amux",
+      "logo": "https://rajvenkadam.github.io/assets/amux-logo.png",
+      "founder": {
+        "@id": "https://rajvenkadam.github.io/#person"
+      },
+      "description": "A platform focused on practical technology learning, engineering fundamentals, and real-world industry exposure for students."
+    }
+  ]
+}

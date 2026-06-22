@@ -1,0 +1,426 @@
+/* ==========================================================================
+   ABOUT MODULE HOOK STYLES - RAJVENKADAM PORTFOLIO (ENHANCED)
+   ========================================================================== */
+
+/* Modern layout orchestration & fluid spacing */
+.main-content-wrapper {
+  padding-top: clamp(100px, 10vh, 140px);
+  padding-bottom: 80px;
+}
+
+/* Page Header Configurations with fine typography */
+.section-header {
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.section-header h1 {
+  font-size: clamp(1.9rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, var(--text-primary) 30%, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Force theme toggle icon to be visible and correctly sized */
+.theme-toggle-btn svg,
+.theme-toggle-btn i {
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+  color: var(--text-primary, #000000); /* Falls back to black if theme variable isn't set */
+}
+.section-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 650px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Dual Column Layout Bento Grid (match index card system) */
+.about-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Give the two-column blocks a clear visual separation */
+.story-card,
+.vision-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--card-shadow);
+}
+
+
+.vision-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Keep all right-column cards equal height to the left story card */
+.story-card,
+.vision-card,
+.quote-card {
+  height: 100%;
+}
+
+/* Quote card styling (index-like) */
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+}
+
+.quote-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quote-card-title i,
+.quote-card-title svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-brand);
+}
+
+.quote-card-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.quote-card-by {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+
+/* ==========================================================================
+   JOURNEY ROADMAP (LEFT RAIL + DOTS)
+   ========================================================================== */
+
+.journey-roadmap {
+  position: relative;
+  padding-left: 28px;
+  width: 100%;
+}
+
+.journey-roadmap-rail {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  border-radius: 99px;
+  background: linear-gradient(
+    180deg,
+    rgba(56, 189, 248, 0.95) 0%,
+    rgba(56, 189, 248, 0.25) 55%,
+    rgba(56, 189, 248, 0.05) 100%
+  );
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+}
+
+.journey-roadmap-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.journey-roadmap-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.journey-roadmap-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid rgba(56, 189, 248, 0.95);
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.12),
+    0 0 18px rgba(56, 189, 248, 0.25);
+  position: absolute;
+  left: -21px; /* aligns dot with rail (rail is at 12px from roadmap) */
+  top:8px;
+}
+
+.journey-roadmap-item::after {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 0px;
+  width: 32px;
+  height: 100%;
+  background: radial-gradient(circle at 50% 16px, var(--dotGlow), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.journey-roadmap-item:hover::after {
+  opacity: 1;
+}
+
+/* Connect rail to each card with a subtle vertical gradient */
+.journey-roadmap-item .journey-roadmap-card {
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.journey-roadmap-card {
+  padding-left: 24px;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+}
+
+.journey-roadmap-card::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 28px;
+  height: calc(100% - 50px);
+  border-radius: 99px;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.35), rgba(56, 189, 248, 0));
+  opacity: 0.85;
+}
+
+.journey-roadmap-year {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+.journey-roadmap-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.journey-roadmap-desc {
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .journey-roadmap {
+    padding-left: 22px;
+  }
+
+  .journey-roadmap-rail {
+    left: 10px;
+  }
+
+  .journey-roadmap-dot {
+    left: -18px;
+  }
+
+  .journey-roadmap-card {
+    padding: 28px 20px 28px 22px;
+  }
+
+  .journey-roadmap-card::before {
+    left: -18px;
+  }
+}
+
+/* Premium Glassmorphism Cards with Interactive Glows */
+.glass-card {
+  /* Make cards clearly visible (index-like contrast) */
+  background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--color-brand) 15%, var(--color-border));
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(56, 189, 248, 0.06), transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.04),
+    0 0 25px rgba(56, 189, 248, 0.05);
+}
+
+/* Story Elements Architecture */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  border: 1px solid var(--color-border);
+}
+
+
+.story-meta-badge {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.06);
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.story-title {
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: -0.4px;
+}
+
+
+.story-text {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+
+.story-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Vision Cards Dynamic Sizing & Typography */
+.vision-card-title {
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.vision-card-title svg {
+  width: 22px;
+  height: 22px;
+  color: #38bdf8;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover .vision-card-title svg {
+  transform: rotate(12px) scale(1.1);
+}
+
+.vision-card-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+
+/* Sophisticated Divider Component */
+.center-line-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 64px 0;
+}
+
+.skyblue-glow-divider {
+  border: none;
+  height: 2px;
+  width: clamp(120px, 25vw, 240px);
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.8), transparent);
+  border-radius: 99px;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about-page-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 32px 24px;
+  }
+  .main-content-wrapper {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content-wrapper {
+    padding-top: 110px;
+  }
+  .section-header {
+    margin-bottom: 32px;
+  }
+  .amux-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .achieve-counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .achieve-counter-card:last-child {
+    grid-column: span 2;
+  }
+}

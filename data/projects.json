@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bts-bus-tracking",
+    "title": "BTS Bus Tracking System",
+    "tagline": "Real-time transportation tracking platform",
+    "description": "A real-time transit tracker designed to eliminate long wait times for campus and public transit routes. Users can monitor active vehicles, coordinate arrivals, and view visual routes.",
+    "category": "fullstack",
+    "technologies": ["React Native", "Node.js", "Express.js", "MongoDB Atlas", "OSM", "Leaflet", "Render", "Web sockets", "API Integration"],
+    "features": [
+      "Real-time geographical location overlays",
+      "Dynamic search and routing for specific numbers",
+      "Estimated arrival schedules based on vehicle speed"
+    ],
+    "challenges": "Handling GPS API rate limits, where location updates were restricted to one request every 30 seconds. The challenge was balancing real-time tracking expectations with efficient API usage and application reliability.",
+    "learning": "Gained experience in real-time data streaming, geospatial mapping, and integrating multiple APIs to create a seamless user experience (The app is in progress and will be launch soon).",
+    "github": "https://youtu.be/d1GeoO7jsuE?si=ZfvEWzbXc2KLB4PN",
+    "demo": "https://youtu.be/d1GeoO7jsuE?si=ZfvEWzbXc2KLB4PN",
+    "image": "assets/projects/bts.png" 
+  },
+  {
+    "id": "vibe-ide",
+    "title": "VIBE IDE",
+    "tagline": "The Visual Intent Build Engine - Integrated Development Environment",
+    "description": "Convert simple Human readable text into UI elements with original raw codes (html, css, js, py). It bridges the gap between intent and code by using human-readable syntax.",
+    "category": "fullstack",
+    "technologies": ["Electron.js", "React.js", "JavaScript", "Monaco Editor", "Vite", "Custom Parser","Code Generation Engine"],
+    "features": [
+      "Human-readable syntax for UI element creation",
+      "Real-time code generation and preview",
+      "Support for multiple programming languages"
+    ],
+    "challenges": "Developing a custom parser that accurately interprets human-readable syntax and translates it into functional code, while ensuring compatibility across different programming languages.",
+    "learning": "Enhanced skills in parser development, code generation techniques, and cross-language compatibility, while also gaining insights into user experience design for development tools.",
+    "github": "https://rajvenkadam.github.io/VIBE-IDE-WEB/",
+    "demo": "https://rajvenkadam.github.io/VIBE-IDE-WEB/",
+    "image": "assets/projects/vibe.ico"
+  },
+  {
+    "id": "iot-security",
+    "title": "IoT Second Layer Password Security System",
+    "tagline": "Advanced IoT-based security solution",
+    "description": "A micro-controller security platform deploying a secondary authentication gate on OS Layer. Requires authorization via physical hardware before granting access.",
+    "category": "iot",
+    "technologies": ["IoT", "Embedded Systems", "Hardware API", "C++"],
+    "features": [
+      "Secondary authentication layer for enhanced security",
+      "Microcontroller-based access control",
+      "Integration with standard desktop operating systems"
+    ],
+    "challenges": "Interfacing microcontrollers with standard desktop operating system credential gates reliably without native driver dependencies.",
+    "learning": "Obtained skills in hardware-to-software serial protocols, embedded memory constraints, and cryptographic safety protocols.",
+    "github": "https://youtu.be/Mbjk870WttA?si=fA0dGL1OUGM4E2mm",
+    "demo": "https://youtu.be/Mbjk870WttA?si=fA0dGL1OUGM4E2mm",
+    "image": "assets/projects/iot.png"
+  },
+  {
+    "id": "news-generator",
+    "title": "Intelligent News Generator",
+    "tagline": "Automated content generation platform",
+    "description": "An automated compiler aggregating feed indexes across global endpoints. Summarizes current trends into structured logs matching selected technical subjects.",
+    "category": "frontend",
+    "technologies": ["n8n", "JSON Parser", "RSS Feed Aggregation", "AI Summarization", "Custom Filters", "gemini 1.5 flash","telegram API"],
+    "features": [
+      "Automated feed aggregation and parsing",
+      "Summarization of current trends into structured logs",
+      "Customizable subject filters for targeted content"
+    ],
+    "challenges": "Managing diverse feed formats and ensuring accurate parsing and summarization while maintaining performance and reliability.",
+    "learning": "Developed expertise in feed aggregation, data parsing, and automated content generation, while also learning to handle various data formats and structures effectively.",
+    "github": "https://www.linkedin.com/posts/rajvenkadam-s-b977373b1_ai-automation-n8n-activity-7445805851824709632-VT0_",
+    "demo": "https://www.linkedin.com/posts/rajvenkadam-s-b977373b1_ai-automation-n8n-activity-7445805851824709632-VT0_",
+    "image": "assets/projects/news.png"
+  },
+  {
+    "id": "syco-app",
+    "title": "Syco App",
+    "tagline": "Personality Analyzer",
+    "description": "A personality analyzer that evaluates user input and provides insights into their personality traits, preferences, and behavioral tendencies.",
+    "category": "frontend",
+    "technologies": ["React Native"],
+    "features": [
+      "User-friendly interface for input and analysis",
+      "Real-time personality trait evaluation",
+      "Insights into behavioral tendencies and preferences"
+    ],
+    "challenges": "Ensuring accurate personality analysis based on user input while maintaining a responsive and intuitive user interface.",
+    "learning": "Gained experience in user interface design and the application of psychological principles in software development.",
+    "github": "https://youtu.be/cLS9zbqDBvU?si=rDWCu_XinI5UnMsO",
+    "demo": "https://youtu.be/cLS9zbqDBvU?si=rDWCu_XinI5UnMsO",
+    "image": "assets/projects/syco.png"
+  }
+]

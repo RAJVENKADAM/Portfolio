@@ -1,0 +1,405 @@
+/* ==========================================================================
+   SKILLS & COMPETENCE RADAR INTERFACE STYLE SPECIFICATION
+   (Pro UI update: bento skill cards + premium cloud/radar)
+   ========================================================================== */
+
+
+/* Layout Grid and Spacing Architecture */
+.skills-page-layout {
+  padding-top: clamp(100px, 10vh, 140px);
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Base Bento Card Configuration */
+.glass-card {
+  background: color-mix(in srgb, var(--bg-secondary) 85%,);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--color-brand, #38bdf8) 15%, var(--color-border));
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 0 25px rgba(56, 189, 248, 0.05);
+}
+
+/* ==========================================================================
+   SECTION 2: DYNAMIC SKILLS CATEGORIES PROGRESS GRID
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+/* Bento category card (matches js/skills.js generated markup) */
+.skill-category-card {
+  position: relative;
+  border-radius: 8px;
+  padding: 28px;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+      color-mix(in srgb, var(--bg-secondary) 92%, transparent),
+      color-mix(in srgb, var(--bg-tertiary) 40%, transparent));
+  border: 1px solid #0f172a34;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.skill-category-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background:
+    radial-gradient(700px circle at 10% 10%, rgba(56, 189, 248, 0.20), transparent 35%),
+    radial-gradient(500px circle at 90% 40%, rgba(168, 85, 247, 0.16), transparent 38%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* Header inside cards */
+.skill-cat-header,
+.category-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+}
+
+.skill-cat-header,
+.category-header {
+  color: var(--color-brand);
+  font-size: smaller !important;
+}
+
+.skill-cat-header svg,
+.skill-cat-header i,
+.category-header svg,
+.category-header i {
+  color: var(--color-brand);
+  width: 22px;
+  height: 22px;
+}
+
+.skill-cat-header {
+  font-size: 1.18rem;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+}
+
+/* Skills list */
+/* ==========================================================================
+   UPDATED: HORIZONTAL SKILLS BADGES MATRIX WITH WRAPPING
+   ========================================================================== */
+
+/* Skills list - changed to row flexbox with auto wrapping */
+.skill-items-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap; /* Allows skills to drop to the next line dynamically */
+  gap: 5px;       /* Even horizontal and vertical spacing between items */
+}
+
+/* Remove old vertical block margins so elements flow horizontally */
+.skill-item {
+  margin-bottom: 0; 
+  display: contents; /* Seamlessly passes layout down to .skill-info badges */
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Base Pill Badge layout optimizations */
+.skill-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px; /* Slightly tighter premium padding for rows */
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--bg-tertiary) 85%, transparent);
+  border: 1.5px solid #0f172a3b;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.04);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Interactive hover logic for row layouts */
+.skill-info:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: color-mix(in srgb, var(--bg-tertiary) 40%, transparent);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.08);
+}
+
+/* Keep older class names from breaking */
+.skill-item-wrapper { margin-bottom: 18px; }
+.skill-item-wrapper:last-child { margin-bottom: 0; }
+.skill-info-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.skill-name { font-size:0.94rem; font-weight:700; color:var(--text-primary); }
+
+/* ==========================================================================
+   SECTION 3: CONCENTRIC TECH RADAR COMPONENT
+   ========================================================================== */
+.tech-radar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.radar-desc-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.radar-desc-para {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+/* Screen Alignment Mechanics */
+.radar-screen-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.radar-circle-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, #38bdf8 45%, var(--color-border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.02) 0%, transparent 70%);
+}
+
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+}
+
+.radar-ring-2 {
+  width: 190px;
+  height: 190px;
+}
+
+.radar-ring-3 {
+  width: 100px;
+  height: 100px;
+}
+
+.radar-core {
+  position: relative;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 900;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Node Plotting Matrix Positions */
+.radar-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.radar-node::after {
+  content: attr(data-label);
+  position: absolute;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0.85;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+/* Absolute positions maps */
+.rn-coding {
+  top: 45px;
+  left: 55px;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+.rn-coding::after { top: -30px; left: -40px; }
+
+.rn-systems {
+  top: 60px;
+  right: 50px;
+  background: #a855f7;
+  box-shadow: 0 0 12px #a855f7;
+}
+.rn-systems::after { top: -30px; right: -40px; }
+
+.rn-mentoring {
+  bottom: 65px;
+  left: 60px;
+  background: #a855f7;
+  box-shadow: 0 0 12px #a855f7;
+}
+.rn-mentoring::after { bottom: -30px; left: -40px; }
+
+.rn-product {
+  bottom: 50px;
+  right: 55px;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+.rn-product::after { bottom: -30px; right: -40px; }
+
+.radar-node:hover {
+  transform: scale(1.4);
+}
+.radar-node:hover::after {
+  opacity: 1;
+  color: var(--text-primary);
+  border-color: #38bdf8;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT TRANSLATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+
+  .radar-circle-frame {
+    width: 250px;
+    height: 250px;
+  }
+
+  .radar-ring-2 { width: 170px; height: 170px; }
+  .radar-ring-3 { width: 90px; height: 90px; }
+}
+
+@media (max-width: 992px) {
+  .tech-radar-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .tech-radar-desc div {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .radar-screen-card {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 32px 24px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-category-card {
+    padding: 22px;
+  }
+
+  .radar-circle-frame {
+    width: 220px;
+    height: 220px;
+  }
+
+  .radar-ring-2 { width: 150px; height: 150px; }
+  .radar-ring-3 { width: 80px; height: 80px; }
+
+  .radar-core {
+    width: 40px;
+    height: 40px;
+    font-size: 0.72rem;
+  }
+
+  /* keep node labels from overflowing */
+  .radar-node::after {
+    font-size: 0.66rem;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tech-cloud-title {
+    font-size: 1.1rem;
+  }
+
+  .tech-cloud-tags {
+    gap: 8px;
+  }
+
+  .tech-cloud-tags .badge,
+  .tech-cloud-tags .tech-tag-badge {
+    padding: 9px 12px;
+    font-size: 0.82rem;
+  }
+
+  .radar-circle-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .radar-node {
+    width: 9px;
+    height: 9px;
+  }
+}
+

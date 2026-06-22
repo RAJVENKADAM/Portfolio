@@ -1,0 +1,455 @@
+/* ==========================================================================
+   PROJECTS CATALOG - CLEAN PLAY STORE ARCHITECTURE
+   ========================================================================== */
+
+/* --- Filter Chips System --- */
+.projects-filter-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 4px 24px 4px;
+  margin-bottom: 24px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide default scrollbar for clean chip strip */
+}
+
+.projects-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 20px; /* Play Store pill design */
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--color-brand-glow, rgba(0, 130, 153, 0.1));
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+/* --- Play Store Card Grid Layout --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 5px;
+  margin-bottom: 0px;
+}
+
+/* Base Card structure mimicking app installation items */
+.project-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.05));
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand);
+}
+
+/* App Header Row (Icon + Title Area) */
+.project-card-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* App-style squircle container */
+.project-icon-frame {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background-color: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.project-icon-frame svg,
+.project-icon-frame i {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.project-meta-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0 0 4px 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Max 2 lines */
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-category-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* App Body / Tech Specs Row */
+.project-card-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tech-tag-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Play Store Inspired Action Buttons Strip */
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.btn-card-action {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.btn-card-action:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================
+   STORE MODAL OVERLAY (CASE STUDY SPEC VIEW)
+   ========================================== */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: none; /* Toggled via your dynamic JavaScript file */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.project-modal.open {
+  display: flex;
+}
+
+.modal-content-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--card-shadow);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-border);
+}
+
+.modal-banner {
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-brand), var(--color-border));
+  color: transparent;
+  user-select: none;
+}
+
+.modal-body-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  padding: 24px 24px 0 24px;
+  margin: 0 0 12px 0;
+}
+
+#modal-tech-list {
+  padding: 0 24px;
+}
+
+.modal-body-section {
+  padding: 0 24px 20px 24px;
+}
+
+.modal-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.modal-section-body {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.modal-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.modal-action-buttons {
+  display: flex;
+  gap: 12px;
+  padding: 12px 24px 24px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.modal-action-buttons .btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-action-buttons .btn-primary {
+  background-color: var(--color-brand);
+  color: #fff !important;
+}
+
+.modal-action-buttons .btn-secondary {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--color-border);
+  color: var(--text-primary);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN SYSTEM MEDIA BREAKPOINTS
+   ========================================== */
+@media (max-width: 640px) {
+  .modal-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .modal-action-buttons {
+    flex-direction: column;
+  }
+}
+/* --- 1:1 Project App Icons --- */
+.project-image-frame {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.project-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* View More Button Alignment */
+.btn-card-action {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  background: var(--bg-tertiary);
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-card-action:hover {
+  background-color: var(--color-border);
+}
+
+/* --- Play Store 16:9 Modal Layout --- */
+.modal-content-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important; /* Allow the 16:9 banner to reach the edges */
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--card-shadow);
+}
+
+/* 16:9 Responsive Image Wrapper */
+.modal-banner-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-banner-hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Container with Invisible Scrollbar */
+.modal-scroll-frame {
+  flex-grow: 1;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Hide for Firefox */
+  -ms-overflow-style: none; /* Hide for IE/Edge */
+}
+
+.modal-scroll-frame::-webkit-scrollbar {
+  display: none; /* Hide for Chrome, Safari, and Opera */
+}
+
+/* Play Store Bottom Fixed Action Bar */
+.modal-store-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--color-border);
+  z-index: 5;
+}
+
+.store-download-tracker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.store-download-tracker span {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.btn-store-get {
+  background-color: var(--color-brand);
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 32px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 130, 153, 0.2);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-store-get:active {
+  transform: scale(0.95);
+}

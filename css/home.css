@@ -1,0 +1,359 @@
+/* ==========================================
+   INTEGRATED DASHBOARD BOX LAYOUT
+   ========================================== */
+.hero-section {
+  padding: 120px 0 40px 0;
+}
+
+.hero-dashboard-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.typing-container {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.typing-text {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* Social Strip Fixes for SVG Sizing */
+.hero-social-strip {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.btn-icon:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  transform: translateY(-2px);
+}
+
+/* Round Portrait Engine Frame */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--color-brand), var(--color-border));
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN SYSTEM MEDIA BREAKPOINTS
+   ========================================== */
+@media (max-width: 968px) {
+  .hero-dashboard-card {
+    grid-template-columns: 1fr;
+    padding: 32px;
+    gap: 32px;
+    text-align: center;
+  }
+  .hero-buttons, .hero-social-strip {
+    justify-content: center;
+  }
+  .avatar-frame {
+    width: 220px;
+    height: 220px;
+    order: -1; /* Pushes picture gracefully over the title on mobile viewports */
+  }
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+/* ==========================================
+   ACHIEVEMENTS ARCHITECTURE & RESPONSIVE GRID
+   ========================================== */
+.achievements-section {
+  padding: 10px 0 10px 0;
+  width: 100%;
+  background-color: #12648533; /* Subtle light pink background for achievements section */
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+/* Multi-Card Responsive Framework */
+.carousel-slide {
+  padding: 0 10px; /* Precise gutter spaces between cards */
+  box-sizing: border-box;
+  flex: 0 0 100%; /* 1 Card default on mobile */
+  transition: opacity 0.3s ease;
+}
+/* ==========================================================================
+   COMPACT MICRO COUNTERS GRID
+   ========================================================================== */
+.achieve-counters-grid {
+  display: grid;
+  /* Densely packed columns */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.achieve-counter-card {
+  background-color: var(--bg-secondary);
+  border-radius: 14px; /* Sleeker, smaller corner radius */
+  padding: 16px 12px; /* Ultra-compact padding */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(48, 48, 48, 0.26); /* Subtle shadow for depth */
+}
+
+.achieve-counter-card:hover {
+  border-color: var(--color-brand);
+}
+
+.achieve-counter-icon {
+  width: 36px; /* Miniature icon container */
+  height: 36px;
+  border-radius: 8px; /* Square-rounded profile */
+  background-color: var(--color-brand-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand);
+  margin-bottom: 8px;
+}
+
+.achieve-counter-icon svg,
+.achieve-counter-icon i {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.achieve-counter-number {
+  /* Small, high-impact numerical scale */
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem); 
+  font-weight: 800;
+  color: var(--color-brand);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.achieve-counter-label {
+  font-size: 0.72rem; /* Clean, micro meta-text */
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Handling */
+@media (max-width: 480px) {
+  .achieve-counters-grid {
+    /* Multi-column layout stays intact on mobile because components are small */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+}
+@media (min-width: 640px) {
+  .carousel-slide {
+    flex: 0 0 50%; /* 2 Cards displayed on Tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-slide {
+    flex: 0 0 33.3333%; /* 3 Cards displayed on Desktop Monitors */
+  }
+}
+
+/* Rounded Card Frames */
+.card-inner-frame {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 20px; /* Deep high-end rounded edges */
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-inner-frame:hover {
+  border-color: var(--color-brand);
+  transform: translateY(-4px);
+}
+
+.aspect-box-16-9 {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Card Typography Layout */
+.card-content-area {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.achievement-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-brand);
+  background-color: var(--color-brand-glow);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.achievement-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.carousel-caption {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Micro pill pagination track indicators */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 32px;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-dots .dot.active {
+  background-color: var(--color-brand);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Redirection Button Controls Below Swiper Container */
+.achievements-action-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.discover-achievements-btn {
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s ease;
+}
+
+.discover-achievements-btn:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand) !important;
+  background-color: var(--bg-secondary);
+}

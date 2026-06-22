@@ -1,0 +1,227 @@
+/* css/resume.css - ATS Resume mock visual viewer and print templates styling */
+
+.resume-layout-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.resume-intro-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-lbl-tag {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+.resume-page-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.resume-intro-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.resume-action-strip {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ATS Paper Document Container */
+.resume-preview-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.resume-paper-doc {
+  width: 100%;
+  max-width: 480px;
+  height: 600px;
+  background-color: #FFFFFF;
+  color: #2D2D2D;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 35px;
+  overflow-y: auto;
+  font-size: 0.65rem;
+  line-height: 1.45;
+  transition: transform var(--transition-normal);
+  transform: rotateY(-5deg) rotateX(4deg);
+}
+
+[data-theme="dark"] .resume-paper-doc {
+  background-color: #ffffff; /* Keep background white for printer readability representation */
+  color: #2d2d2d;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.resume-paper-doc:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+/* Internal Paper content */
+.paper-doc-header {
+  border-bottom: 2px solid #111111;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.paper-doc-name {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.paper-doc-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555555;
+  margin-bottom: 4px;
+}
+
+.paper-doc-contacts {
+  font-size: 0.6rem;
+  color: #666666;
+}
+
+.paper-doc-section {
+  margin-bottom: 14px;
+}
+
+.paper-doc-sec-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+}
+
+.paper-doc-item {
+  margin-bottom: 10px;
+}
+
+.paper-doc-item-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #111111;
+}
+
+.paper-doc-item-subtitle {
+  font-style: italic;
+  color: #444444;
+  margin-bottom: 4px;
+}
+
+.paper-doc-bullets {
+  padding-left: 14px;
+  list-style-type: disc;
+}
+
+.paper-doc-bullets li {
+  margin-bottom: 2px;
+  color: #333333;
+}
+
+.paper-doc-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.paper-doc-skill-cat {
+  font-weight: 700;
+}
+
+/* ==========================================
+   PRINT MEDIA OVERRIDES (Ctrl + P)
+   ========================================== */
+@media print {
+  /* Hide UI features */
+  header, footer, canvas, .resume-intro-panel, #shortcuts-help, .scroll-progress-bar, .mouse-glow {
+    display: none !important;
+  }
+  
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .resume-preview-panel {
+    width: 100% !important;
+  }
+
+  .resume-paper-doc {
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .paper-doc-name {
+    font-size: 22pt !important;
+  }
+  .paper-doc-role {
+    font-size: 13pt !important;
+  }
+  .paper-doc-contacts {
+    font-size: 10pt !important;
+  }
+  .paper-doc-sec-title {
+    font-size: 12pt !important;
+  }
+}
+
+/* Responsiveness overrides */
+@media (max-width: 992px) {
+  .resume-layout-grid { grid-template-columns: 1fr; gap: 40px; }
+  .resume-paper-doc { transform: none !important; }
+}

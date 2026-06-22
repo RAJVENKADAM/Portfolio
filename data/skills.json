@@ -1,0 +1,64 @@
+{
+"programming": [
+{"name": "C"},
+{"name": "Java"}
+],
+
+"frontend": [
+{"name": "HTML"},
+{"name": "CSS"},
+{"name": "React.js"}
+],
+
+"backend": [
+{"name": "Node.js"},
+{"name": "Express.js"},
+{"name": "REST API Development"}
+],
+
+"database": [
+{"name": "MongoDB"},
+{"name": "MySQL"},
+{"name": "Supabase"}
+],
+
+"ai_and_productivity": [
+{"name": "AI-Assisted Development"},
+{"name": "Prompt Engineering"},
+{"name": "AI Productivity Workflows"},
+{"name": "Product Validation"},
+{"name": "Case Study Analysis"}
+],
+
+"tools": [
+{"name": "Git"},
+{"name": "GitHub"},
+{"name": "VS Code"}
+],
+
+"computer science": [
+{"name": "Data Structures"},
+{"name": "Object-Oriented Programming"},
+{"name": "DBMS"},
+{"name": "Operating Systems"},
+{"name": "Computer Networks"},
+{"name": "Software Engineering"}
+],
+
+"product engineering": [
+{"name": "Product Development"},
+{"name": "Product Thinking"},
+{"name": "Problem Solving"},
+{"name": "System Analysis"},
+{"name": "Technical Documentation"}
+],
+
+"leadership and communication": [
+{"name": "Technical Mentoring"},
+{"name": "Peer Learning Facilitation"},
+{"name": "Leadership"},
+{"name": "Public Speaking"},
+{"name": "Team Collaboration"},
+{"name": "Community Building"}
+]
+}

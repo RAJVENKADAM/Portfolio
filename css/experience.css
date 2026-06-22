@@ -1,0 +1,210 @@
+/* ==========================================================================
+   CHRONOLOGICAL CAREER TIMELINE DESIGN ENGINE
+   ========================================================================== */
+
+/* Main Container Positioning */
+main.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Base Glassmorphism Configuration */
+.glass-card {
+  background: color-mix(in srgb, var(--bg-secondary) 85%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--color-brand, #38bdf8) 15%, var(--color-border));
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ==========================================================================
+   VERTICAL TIMELINE STRUCTURAL BACKBONE
+   ========================================================================== */
+.experience-timeline {
+  position: relative;
+  width: 100%;
+  margin: 40px auto 0 auto;
+}
+
+/* Central vertical track rail line */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    var(--color-brand) 0%, 
+    color-mix(in srgb, var(--color-border) 60%, transparent) 70%,
+    transparent 100%
+  );
+}
+
+/* Row wrapper constraints */
+.experience-timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 60px;
+}
+
+.experience-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dynamic Interactive Node Dots */
+.timeline-dot-icon {
+  position: absolute;
+  left: 24px;
+  top: 8px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 2px solid color-mix(in srgb, var(--color-border) 80%, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-timeline-item:hover .timeline-dot-icon {
+  color: #38bdf8;
+  border-color: #38bdf8;
+  background-color: var(--bg-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+/* Active node state accents */
+.experience-timeline-item.active .timeline-dot-icon {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+/* ==========================================================================
+   TIMELINE INSIDE CONTENT CARDS
+   ========================================================================== */
+.experience-card-panel {
+  padding: 36px;
+}
+
+.experience-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.experience-role-title {
+  font-size: 1.32rem;
+  font-weight: 850;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.experience-company-title {
+  font-size: 1rem;
+  font-weight: 750;
+  color: var(--color-brand);
+}
+
+.experience-date-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+/* Highlight metrics banner row */
+.experience-card-panel div[style*="color-primary"] {
+  color: var(--color-brand) !important; /* Forces premium system tint consistency */
+  font-size: 0.86rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 800 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Descriptions Bullet Grid */
+.experience-body-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience-body-list li {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Clean square bullet pseudo shapes */
+.experience-body-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-brand);
+  border-radius: 1px;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 15px;
+  }
+  
+  .experience-timeline-item {
+    padding-left: 36px;
+    margin-bottom: 32px;
+  }
+  
+  .timeline-dot-icon {
+    left: 0px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .experience-card-panel {
+    padding: 24px 20px;
+  }
+  
+  .experience-card-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .experience-date-tag {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+}

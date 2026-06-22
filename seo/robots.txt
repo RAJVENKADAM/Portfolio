@@ -1,0 +1,5 @@
+# robots.txt for Rajvenkadam S Portfolio inside seo directory
+User-agent: *
+Allow: /
+
+Sitemap: https://rajvenkadam.github.io/sitemap.xml

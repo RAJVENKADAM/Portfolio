@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Rajvenkadam S | Product Engineer Aspirant Portfolio</title>
+  <meta name="description" content="Welcome to the portfolio of Rajvenkadam S, an Information Technology student, Full Stack Developer, Technology Mentor, and Founder of AMUX. Explore software projects and career roadmap.">
+  <meta name="keywords" content="Rajvenkadam, Rajvenkadam S, Rajvenkadam Portfolio, Rajvenkadam Developer, Rajvenkadam Product Engineer, Rajvenkadam Full Stack Developer, Rajvenkadam Technology Mentor, AMUX Founder, Product Engineer Portfolio">
+  <meta name="author" content="RAJVENKADAM S">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="./index.html">
+  <meta property="og:title" content="Rajvenkadam S | Product Engineer Aspirant Portfolio">
+  <meta property="og:description" content="Explore the portfolio of Rajvenkadam S: Full Stack developer, Technology Mentor, and founder of AMUX.">
+  <meta property="og:image" content="assets/port.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="./index.html">
+  <meta property="twitter:title" content="Rajvenkadam S | Product Engineer Aspirant Portfolio">
+  <meta property="twitter:description" content="Explore the portfolio of Rajvenkadam S: Full Stack developer, Technology Mentor, and founder of AMUX.">
+  <meta property="twitter:image" content="assets/portfolio.png">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/port.png">
+  <link rel="preconnect" href="https://unpkg.com">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- Loading Animation screen -->
+  <div id="loading-screen">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Initializing Engine...</div>
+  </div>
+
+
+
+  <!-- Navigation bar sticky header -->
+  <header class="header-nav" id="navbar">
+    <div class="container nav-container">
+
+      <!-- Brand -->
+      <div class="nav-brand" aria-label="Brand">
+        <span class="nav-brand-text">RAJVENKADAM</span>
+      </div>
+
+      <!-- Page Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme toggle selector -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+          <i data-lucide="sunMoon" class="moon-icon"></i>
+        </button>
+
+        <!-- Mobile hamburger -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  
+  <!-- Homepage Hero main body layout -->
+  <main>
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-dashboard-card reveal active">
+        
+        <div class="hero-content">
+          <h1 class="hero-title" aria-label="RAJVENKADAM S">
+            <span class="brand-first brand-name">RAJVENKADAM S</span>
+          </h1>
+
+
+          
+          <div class="typing-container">
+            <span>Product Engineer specializing in </span>
+            <span id="typed-role" class="typing-text"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-description">
+            Pre - Final Year IT student with a strong passion for full-stack engineering, technology mentoring, and collaborative problem solving. Fostering engineering execution via AMUX.
+          </p>
+
+          <div class="hero-social-strip">
+            <a href="https:www.linkedin.com/in/rajvenkadam-s-b977373b1" class="btn-icon social-tooltip" data-tooltip="LinkedIn" aria-label="LinkedIn Profile" target=_blank;>
+              <!-- LinkedIn SVG -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.266 2.37 4.266 5.455v6.286z"/>
+                <path d="M5.337 7.433c-.999 0-1.801-.813-1.801-1.813s.802-1.813 1.801-1.813c1.02 0 1.801.813 1.801 1.813s-.781 1.813-1.801 1.813zM6.868 20.452H3.806V9h3.062v11.452z"/>
+              </svg>
+            </a>
+
+            <a href="https://github.com/RAJVENKADAM" class="btn-icon social-tooltip" data-tooltip="GitHub" aria-label="GitHub Profile" target=_blank;>
+              <!-- GitHub SVG -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M12 0.5C5.73 0.5 0.75 5.48 0.75 11.75c0 4.99 3.22 9.21 7.68 10.71.56.1.76-.24.76-.54 0-.27-.01-1.17-.01-2.12-2.78.6-3.37-1.18-3.37-1.18-.46-1.17-1.12-1.48-1.12-1.48-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.89 1.52 2.33 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .3.2.65.76.54 4.46-1.5 7.68-5.72 7.68-10.71C23.25 5.48 18.27.5 12 .5z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.geeksforgeeks.org/profile/rajvenkadam" class="btn-icon social-tooltip" data-tooltip="Coding Profile" aria-label="Coding Profile Link" target=_blank>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="16 18 22 12 16 6"></polyline>
+    <polyline points="8 6 2 12 8 18"></polyline>
+  </svg>
+</a>
+
+            <a href="mailto:rajvenkadam@gmail.com" class="btn-icon social-tooltip" data-tooltip="Email" aria-label="Email Direct Link">
+              <!-- Mail SVG -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+
+            <a href="https://wa.me/919629798166" class="btn-icon social-tooltip" data-tooltip="WhatsApp" aria-label="WhatsApp Message Link">
+              <!-- WhatsApp SVG -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M12.04 2C6.5 2 2 6.47 2 12c0 1.77.47 3.5 1.36 5.01L2 22l5.15-1.35A10.02 10.02 0 0 0 12.04 22c5.54 0 10.04-4.47 10.04-10 0-5.53-4.5-10-10.04-10z"/>
+                <path d="M16.97 14.56c-.27-.13-1.6-.78-1.85-.87-.25-.09-.43-.13-.62.13-.18.26-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.13-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.11-.11.25-.29.37-.43.12-.14.16-.24.25-.4.09-.16.04-.3-.02-.43-.06-.13-.62-1.51-.85-2.07-.22-.52-.45-.45-.62-.46h-.53c-.18 0-.43.07-.66.32-.22.26-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.18 1.74 2.65 4.22 3.72.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.6-.65 1.82-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31z" fill="#ffffff"/>
+              </svg>
+            </a>
+
+
+          </div>
+
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-frame">
+            <img src="assets/hero-graphic.jpeg" alt="Rajvenkadam S" class="hero-image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="achievements-section">
+  <div class="container">
+    
+    <div class="carousel-wrapper" id="achievements-carousel">
+      <div class="carousel-container" id="carousel-track" style="cursor: grab;">
+        
+        <div class="carousel-slide" role="group" aria-roledescription="slide">
+          <div class="card-inner-frame">
+            <div class="aspect-box-16-9">
+              <img src="assets/achievement1.jpeg" alt="National Hackathon Winner" class="carousel-img">
+            </div>
+            <div class="card-content-area">
+              <span class="achievement-badge">Hackathon</span>
+              <h3 class="achievement-card-title">Smart India Hackathon</h3>
+              <p class="carousel-caption">National Hackathon Winner - Product Design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide">
+          <div class="card-inner-frame">
+            <div class="aspect-box-16-9">
+              <img src="assets/achievement1.jpeg" alt="National Hackathon Winner" class="carousel-img">
+            </div>
+            <div class="card-content-area">
+              <span class="achievement-badge">Hackathon</span>
+              <h3 class="achievement-card-title">Smart India Hackathon</h3>
+              <p class="carousel-caption">National Hackathon Winner - Product Design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide">
+          <div class="card-inner-frame">
+            <div class="aspect-box-16-9">
+              <img src="assets/achievement1.jpeg" alt="Technology Mentorship" class="carousel-img">
+            </div>
+            <div class="card-content-area">
+              <span class="achievement-badge">Mentorship</span>
+              <h3 class="achievement-card-title">Tech Conclave 2026</h3>
+              <p class="carousel-caption">Technology Mentorship Keynote Presentation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide">
+          <div class="card-inner-frame">
+            <div class="aspect-box-16-9">
+              <img src="assets/achievement1.jpeg" alt="AMUX Engine Scaling" class="carousel-img">
+            </div>
+            <div class="card-content-area">
+              <span class="achievement-badge">Leadership</span>
+              <h3 class="achievement-card-title">AMUX Engineering</h3>
+              <p class="carousel-caption">AMUX Platform Launch & Engineering Scaling</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots" aria-label="Carousel pagination"></div>
+    </div>
+
+    <div class="achievements-action-row">
+      <a href="achievements.html" class="btn btn-secondary discover-achievements-btn">
+        <span>View Full Achievements Gallery</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>-->
+<section class ="container">
+<div class="achieve-counters-grid">
+      <!-- Mentoring -->
+      <div class="glass-card achieve-counter-card reveal active">
+        <div class="achieve-counter-number" data-target="100">0</div>
+        <div class="achieve-counter-label">Peers Trained</div>
+      </div>
+
+      <!-- Projects -->
+      <div class="glass-card achieve-counter-card reveal active">
+        <div class="achieve-counter-number" data-target="6">0</div>
+        <div class="achieve-counter-label">Major Projects</div>
+      </div>
+
+      <!-- Leadership -->
+      <div class="glass-card achieve-counter-card reveal">
+        <div class="achieve-counter-number" data-target="4">0</div>
+        <div class="achieve-counter-label">Leadership Roles</div>
+      </div>
+
+      <!-- Grad Year -->
+      <div class="glass-card achieve-counter-card reveal">
+        <div class="achieve-counter-number" data-target="2028">0</div>
+        <div class="achieve-counter-label">Graduation Year</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- Footers -->
+    <footer class="footer-bar">
+    <div class="container footer-grid">
+
+      <!-- LEFT: Name + Tag + Quote + Live Views -->
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="footer-logo">
+            <span class="brand-first">RAJVENKADAM</span>
+          </span>
+
+          <span class="footer-tagline">Product Engineer aspirant | Technology Mentor</span>
+        </div>
+
+        <div class="footer-quote" aria-label="Footer quote">
+          <div id="footer-quote-box">--</div>
+        </div>
+
+        <!-- Live visitor view count pulse badge -->
+        <div class="footer-analytics-badge" aria-label="Live view count">
+  <span class="footer-visits-label" style="margin-right: 6px;">Web views:</span>
+  <span id="footer-visitor-val">0</span>
+</div>
+      </div>
+
+      <!-- RIGHT: Quick Links + Contact (1 column each) -->
+      <div class="footer-right">
+        <div class="footer-col">
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-col">
+            <a href="index.html" class="footer-link-item">Home</a>
+            <a href="about.html" class="footer-link-item">My Story</a>
+            <a href="skills.html" class="footer-link-item">Skills Cloud</a>
+            <a href="projects.html" class="footer-link-item">Projects Catalog</a>
+            <a href="achievements.html" class="footer-link-item">Achievements</a>
+            <a href="gallery.html" class="footer-link-item">Gallery</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-col">
+            <a href="contact.html" class="footer-link-item">Inquiries</a>
+            <a href="mailto:rajvenkadam@gmail.com" class="footer-link-item">Email</a>
+            <a href="https://wa.me/919629798166" class="footer-link-item">WhatsApp</a>
+            <a href="https:www.linkedin.com/in/rajvenkadam-s-b977373b1" class="footer-link-item">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-copy">
+      &copy; 2026 Rajvenkadam S. Crafted with Product Engineering rigor. All Rights Reserved.
+    </div>
+  </footer>
+
+
+  <!-- Script tags order -->
+  <script src="js/theme.js"></script>
+  <script src="js/visitor.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
+
+  <style>
+    /* Index-only nav + carousel tweaks to match requested behavior */
+    .brand-first,.brand-last{display:inline-block;}
+
+
+    /* Navbar: brand + flexible name sizing */
+    #navbar .nav-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+      min-width: 120px;
+    }
+    #navbar .nav-brand-text {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    /* Hero brand name should never wrap; it must scale down on small screens */
+    .brand-name{
+      display: inline-block;
+      white-space: nowrap;
+      font-size: clamp(1.4rem, 4vw, 3.2rem);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    @media (max-width: 480px){
+      .brand-name{letter-spacing: -0.6px;}
+    }
+
+    @media (max-width: 968px) {
+      #navbar .nav-brand {
+        min-width: 92px;
+      }
+      #navbar .nav-brand-text {
+        font-size: 0.85rem;
+      }
+      /* Shrink header capsule on smaller devices */
+      .header-nav {
+        top: 10px;
+      }
+      .nav-container {
+        height: 54px;
+        padding: 0 14px;
+      }
+    }
+
+    /* Carousel: caption below image; dots should show */
+    #achievements-carousel .carousel-track{display:flex;}
+    #achievements-carousel .carousel-slide{min-width:auto; flex:0 0 auto; width:100%;}
+    #achievements-carousel .carousel-caption{position: static;}
+
+    /* Keep dots visible even if existing CSS differs */
+    #carousel-dots{padding-bottom: 12px;}
+  </style>
+
+  
+  <script src="js/achievements.js"></script>
+  <script>
+    // === Index-only fixes (icons, navbar motion, achievements carousel) ===
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1) Lucide icons: render after DOM is ready.
+      //    NOTE: social icons are replaced with inline SVGs, but keeping this is harmless.
+      try {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        }
+      } catch (e) {}
+
+      // 2) Instagram-like navbar visibility (override/ensure correct behavior)
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        let lastY = window.scrollY;
+        const SCROLL_HIDE_THRESHOLD = 80;
+        const MICRO_DELTA = 5;
+
+        // Set initial state explicitly
+        navbar.style.transform = 'translate(-50%, 0)';
+        navbar.style.opacity = '1';
+
+        window.addEventListener('scroll', () => {
+          const y = window.scrollY;
+          const dy = y - lastY;
+          if (Math.abs(dy) < MICRO_DELTA) return;
+
+          const shouldHide = y > SCROLL_HIDE_THRESHOLD && dy > 0;
+          navbar.style.transform = shouldHide ? 'translate(-50%, -120px)' : 'translate(-50%, 0)';
+          navbar.style.opacity = shouldHide ? '0' : '1';
+          lastY = y;
+        }, { passive: true });
+      }
+
+      // 3) Achievements carousel: swipe (mouse + touch), no arrows, dots active,
+      //    cards per view: <768 => 1, 768-1023 => 2, >=1024 => 3.
+      const track = document.getElementById('carousel-track');
+      const dotsWrap = document.getElementById('carousel-dots');
+      const carousel = document.getElementById('achievements-carousel');
+      if (track && dotsWrap && carousel) {
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+        let isDown = false;
+        let startX = 0;
+        let startTranslate = 0;
+        let translate = 0;
+
+        const getPerView = () => {
+          const w = window.innerWidth;
+          if (w >= 1024) return 3;
+          if (w >= 768) return 2;
+          return 1;
+        };
+
+        const getMaxIndex = () => Math.max(0, slides.length - getPerView());
+
+        const getCardWidth = () => {
+          const perView = getPerView();
+          return carousel.clientWidth / perView;
+        };
+
+        // Inject minimal carousel CSS (ensures image+caption never overflow)
+        const styleId = 'index-achievements-carousel-inline-style';
+        if (!document.getElementById(styleId)) {
+          const st = document.createElement('style');
+          st.id = styleId;
+          st.textContent = `
+            #achievements-carousel{max-width:100%;}
+            #carousel-track{display:flex; will-change:transform;}
+            #carousel-track{touch-action: pan-y;}
+
+            #achievements-carousel .carousel-slide{
+              padding: 0 10px;
+              box-sizing: border-box;
+              flex: 0 0 auto;
+              overflow: hidden;
+              border-radius: 20px;
+            }
+            #achievements-carousel .card-inner-frame{height:100%; display:flex; flex-direction:column;}
+            #achievements-carousel .aspect-box-16-9{flex: 0 0 auto; width:100%; aspect-ratio: 16 / 9; overflow:hidden;}
+            #achievements-carousel .carousel-img{width:100%; height:100%; object-fit:cover; display:block;}
+            #achievements-carousel .card-content-area{padding: 16px;}
+          `;
+          document.head.appendChild(st);
+        }
+
+        const updateDots = () => {
+          const total = getMaxIndex() + 1;
+          dotsWrap.innerHTML = '';
+          for (let i = 0; i < total; i++) {
+            const d = document.createElement('span');
+            d.className = 'dot' + (i === currentIndex ? ' active' : '');
+            d.addEventListener('click', () => {
+              currentIndex = i;
+              applyTranslate();
+              updateDots();
+            });
+            dotsWrap.appendChild(d);
+          }
+        };
+
+        const applyTranslate = () => {
+          translate = -currentIndex * getCardWidth();
+          track.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+          track.style.transform = `translateX(${translate}px)`;
+        };
+
+        const shouldEnableSwipe = () => getMaxIndex() > 0;
+
+        // Drag handling
+        const pointerDown = (clientX) => {
+          if (!shouldEnableSwipe()) return;
+          isDown = true;
+          track.style.transition = 'none';
+          startX = clientX;
+          startTranslate = translate;
+          track.style.cursor = 'grabbing';
+        };
+
+        const pointerMove = (clientX) => {
+          if (!isDown) return;
+          const dx = clientX - startX;
+          translate = startTranslate + dx;
+          track.style.transform = `translateX(${translate}px)`;
+        };
+
+        const pointerUp = (clientX) => {
+          if (!isDown) return;
+          isDown = false;
+          track.style.cursor = 'grab';
+
+          const dx = clientX - startX;
+          const cardW = getCardWidth();
+
+          // Threshold: move to next/prev if drag passes quarter card width
+          const threshold = cardW * 0.25;
+          if (dx < -threshold && currentIndex < getMaxIndex()) currentIndex++;
+          else if (dx > threshold && currentIndex > 0) currentIndex--;
+
+          applyTranslate();
+          updateDots();
+        };
+
+        const layout = () => {
+          const cardW = getCardWidth();
+          slides.forEach(s => {
+            s.style.width = `${cardW}px`;
+            s.style.flex = `0 0 ${cardW}px`;
+          });
+          currentIndex = Math.min(currentIndex, getMaxIndex());
+          dotsWrap.style.display = (getMaxIndex() + 1) > 0 ? 'flex' : 'none';
+
+          track.style.cursor = shouldEnableSwipe() ? 'grab' : 'default';
+          applyTranslate();
+          updateDots();
+        };
+
+        // Mouse
+        track.addEventListener('mousedown', (e) => pointerDown(e.clientX));
+        window.addEventListener('mousemove', (e) => pointerMove(e.clientX));
+        window.addEventListener('mouseup', (e) => pointerUp(e.clientX));
+
+        // Touch
+        track.addEventListener('touchstart', (e) => pointerDown(e.touches[0].clientX), { passive: true });
+        track.addEventListener('touchmove', (e) => pointerMove(e.touches[0].clientX), { passive: true });
+        track.addEventListener('touchend', (e) => {
+          const x = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : startX;
+          pointerUp(x);
+        }, { passive: true });
+
+        window.addEventListener('resize', layout);
+
+        // init
+        translate = 0;
+        layout();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
