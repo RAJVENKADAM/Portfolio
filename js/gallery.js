@@ -32,7 +32,7 @@
         "title": "NPTEL Certificate",
         "description": "Completed the NPTEL course on 'Introduction To Industry 4.0 And Industrial Internet Of Things', gaining comprehensive knowledge of the principles, technologies, and applications of Industry 4.0 and IIoT in modern industrial settings.",
         "category": "certificates",
-        "image": "assets/gallery/cert/nptel.jpg"
+        "image": "assets/gallery/cert/NPTEL.jpg"
       },
       {
         "title": "Idea Presentation Certificate",
