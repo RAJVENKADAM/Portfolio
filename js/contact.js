@@ -1,4 +1,4 @@
-/* js/contact.js - Contact form validation and submission simulation */
+/* js/contact.js - WhatsApp Contact Form */
 
 (function () {
   window.addEventListener('DOMContentLoaded', () => {
@@ -15,49 +15,65 @@
       const subject = document.getElementById('contact-subject').value.trim();
       const message = document.getElementById('contact-message').value.trim();
 
-      // Basic Validation
+      // Validation
       if (!name || !email || !subject || !message) {
         showStatus("Please fill in all fields before submitting.", "error");
         return;
       }
 
-      // Email Format Check
+      // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         showStatus("Please enter a valid email address.", "error");
         return;
       }
 
-      // Simulate sending logs
-      showStatus("Dispatching message...", "info");
-      
+      showStatus("Opening WhatsApp...", "info");
+
+      const whatsappMessage =
+`New Portfolio Contact Request
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message:
+${message}`;
+
+      const whatsappURL =
+        `https://wa.me/919629798166?text=${encodeURIComponent(whatsappMessage)}`;
+
       setTimeout(() => {
-        showStatus("Message sent successfully! Rajvenkadam will contact you shortly.", "success");
+        window.open(whatsappURL, '_blank');
+
+        showStatus(
+          "WhatsApp opened successfully. Please click Send in WhatsApp.",
+          "success"
+        );
+
         form.reset();
-        
-        // Trigger celebratory confetti on message success
+
         if (typeof window.triggerConfetti === 'function') {
           window.triggerConfetti();
         }
-      }, 1500);
+      }, 500);
     });
-if (typeof lucide !== 'undefined') {
-  lucide.createIcons();
-}
+
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
     function showStatus(msg, type) {
       if (!statusAlert) return;
 
       statusAlert.textContent = msg;
-      statusAlert.className = 'form-status-alert'; // Reset
+      statusAlert.className = 'form-status-alert';
 
       if (type === 'success') {
         statusAlert.classList.add('success');
       } else if (type === 'error') {
         statusAlert.classList.add('error');
       } else {
-        // Standard loading status
         statusAlert.style.display = 'block';
-        statusAlert.style.backgroundColor = 'rgba(var(--color-primary-rgb), 0.05)';
+        statusAlert.style.backgroundColor = 'rgba(var(--color-primary-rgb), 0.08)';
         statusAlert.style.color = 'var(--color-primary)';
         statusAlert.style.border = '1px solid var(--color-border)';
       }
